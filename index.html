@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Learn Integral Calculus with Salman</title>
+  <style>
+    :root{
+      /* Colors */
+      --blue-bg:#cfe7ff;           /* lighter uniform page background */
+      --beige-300:#fdf6ec;         /* soft beige for sections */
+      --beige-500:#e8d3a0;         /* beige for intro card */
+      --light-brown:#f3e7d3;       /* topic hover bg */
+      --light-brown-border:#d8b98b;/* topic hover border */
+      --forum-blue:#1e3a8a;        /* Discussion Forum button */
+      --yt-red:#ff4d4d;            /* YouTube button */
+      --ink:#000000;               /* all text black */
+      --shadow: 0 10px 25px rgba(0,0,0,.15);
+      --radius: 16px;
+    }
+
+    /* Base */
+    *{box-sizing:border-box}
+    html,body{margin:0; padding:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; color:var(--ink); background:var(--blue-bg); min-height:100vh;}
+
+    .container{max-width:1100px; margin:0 auto; padding:24px;}
+
+    header.hero{background: transparent; border-bottom: none; box-shadow: none;}
+    .hero-inner{display:grid; grid-template-columns: 1fr; gap:20px; align-items:center; padding:56px 24px; text-align:center;}
+    .badge{display:inline-block; padding:8px 14px; border-radius:999px; background:rgba(0,0,0,.08); border:1px solid rgba(0,0,0,.15); font-size:14px;}
+
+    h1{margin:8px 0 0; font-size: clamp(28px, 7vw, 50px); line-height: 1.15;}
+    .lead{margin:8px 0 0; font-size: clamp(15px, 3.8vw, 20px);}
+
+    .cta-row{display:flex; gap:12px; margin-top:18px; justify-content:center;}
+    .btn{appearance:none; border:none; cursor:pointer; text-decoration:none; padding:14px 22px; border-radius: 14px; font-weight:600; box-shadow: var(--shadow); transition: transform .08s ease, background .2s ease, color .2s ease; outline: none; min-height:48px}
+    .btn.primary{background: #1e40af; color:#fff}
+    .btn.primary:hover{transform: translateY(-2px); background:#1e3a8a}
+    .btn:focus-visible{outline:3px solid #1e3a8a; outline-offset:2px}
+
+    /* Intro */
+    .card{background:var(--beige-500); border:none; border-radius: var(--radius); box-shadow: var(--shadow); padding:32px; text-align:center;}
+    .card h2{margin-top:0; font-size: clamp(20px, 5.5vw, 30px)}
+    .card p{margin: 6px 0; font-size: clamp(14px, 4vw, 17px)}
+
+    /* Topics */
+    .grid{display:grid; gap:18px; grid-template-columns: repeat(3, 1fr); margin-top:24px}
+    .option{background:#ffffff; border:1px solid #eaeaea; border-radius: var(--radius); padding:24px; box-shadow: var(--shadow); transition: transform .2s ease, background .2s ease, border-color .2s ease}
+    .option:hover{background:var(--light-brown); border-color:var(--light-brown-border)}
+    .option h3{margin:0 0 8px; font-size: clamp(16px, 4.5vw, 24px)}
+    .option p{margin:0; font-size: clamp(13px, 3.8vw, 15px)}
+
+    /* Big Buttons */
+    .big-actions{display:flex; gap:24px; justify-content:center; background:var(--beige-300); padding:40px; border-radius: var(--radius); margin-top:32px;}
+    .big-btn{width:350px; height:120px; display:flex; align-items:center; justify-content:center; text-decoration:none; border-radius: 16px; font-weight:800; font-size: clamp(18px, 5.5vw, 28px); box-shadow: var(--shadow); transition: transform .08s ease, filter .2s ease; color:#fff; min-height:64px}
+    .big-btn.forum{background: var(--forum-blue);}
+    .big-btn.youtube{background: var(--yt-red);}
+    .big-btn:hover{transform: translateY(-4px); filter: brightness(1.1)}
+    .big-btn:focus-visible{outline:3px solid #000; outline-offset:2px}
+
+    /* Footer */
+    footer{margin-top:32px; padding:24px env(safe-area-inset-right) 24px env(safe-area-inset-left); color:#000; font-size:14px; border-top:1px solid rgba(0,0,0,.3); background:transparent; text-align:center}
+
+    /* Mobile tweaks */
+    @media (max-width: 900px){
+      .container{padding:16px}
+      .hero-inner{padding:40px 16px}
+      .grid{grid-template-columns: 1fr;}
+      .card{text-align:left}
+      .big-actions{flex-direction:column; align-items:stretch; padding:24px}
+      .big-btn{width:100%; height:72px}
+    }
+
+    /* Reduce motion for users who prefer it */
+    @media (prefers-reduced-motion: reduce){
+      .btn, .option, .big-btn{transition:none}
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container hero-inner">
+      <div>
+        <span class="badge">Math • Beginner-friendly</span>
+        <h1>Learn Integral Calculus with Salman</h1>
+        <p class="lead">A gentle, visual introduction to functions, slopes, and trigonometric basics — all leading toward intuition for integrals.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#intro">Start reading</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Intro -->
+    <section id="intro" class="card" aria-labelledby="intro-title">
+      <h2 id="intro-title">An introduction about calculus</h2>
+      <p>Calculus studies how things change. We start with <em>functions</em>, learn how to measure change with <em>slopes</em> (derivatives), and build intuition for areas and accumulation with <em>integrals</em>. This page is a lightweight launchpad — we’ll keep things friendly and visual.</p>
+    </section>
+
+    <!-- Topics -->
+    <section aria-labelledby="topics-title">
+      <h2 id="topics-title" class="sr-only">Topics</h2>
+      <div class="grid" role="list">
+        <article class="option" role="listitem">
+          <h3>Functions</h3>
+          <p>Inputs → outputs. Domain, range, and how graphs tell the story.</p>
+        </article>
+        <article class="option" role="listitem">
+          <h3>Finding the slope</h3>
+          <p>From average rate of change to the derivative as an instant slope.</p>
+        </article>
+        <article class="option" role="listitem">
+          <h3>Trigonometric functions</h3>
+          <p>Sin, cos, tan — periodic motion, unit circle intuition, and graphs.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Big Buttons -->
+    <section aria-labelledby="cta-title">
+      <h2 id="cta-title" class="sr-only">Continue Learning</h2>
+      <div class="big-actions">
+        <a class="big-btn youtube" href="#" id="ytBtn" rel="noopener">YouTube Videos</a>
+        <a class="big-btn forum" href="#" id="forumBtn" rel="noopener">Discussion Forum</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container" style="padding:0">
+        <span>© Salman 2025</span>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('forumBtn').addEventListener('click', (e)=>{
+      e.preventDefault();
+      alert('Hook this to your Discussion Forum URL.');
+    })
+    document.getElementById('ytBtn').addEventListener('click', (e)=>{
+      e.preventDefault();
+      alert('Hook this to your YouTube playlist or channel.');
+    })
+  </script>
+</body>
+</html>
